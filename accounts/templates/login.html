@@ -1,34 +1,53 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-</head>
-<body>
-        <div class='container'>
-            <div class='window'>
-                <div class='overlay'></div>
-                    <div class='content'>
-                        <div class='welcome'>WELCOME</div>
-                            <ul>
-                                    <li><a href="{% url 'website:homepage' %}">Home</a></li>
-                                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                                </ul>
-                            <h3>Login Here</h3>
-                                <form method="POST" class="login-form" action="">
-                                    {% csrf_token %}
-                                        <div class="details">
-                                            {{ form.email }}
-                                            {{ form.password }}
-                                                <button class='ghost-round full-width'>Sign In</button>
-                                        </div>
-                                </form>
-                    </div>
-            </div>
-        </div>
+{% block login %}
 
-</body>
-</html>
+<!--<div class='container'>-->
+<!--    <div class='content'>-->
+<!--        <ul>-->
+<!--            <li><a href="{% url 'website:homepage' %}">Home</a></li>-->
+<!--            <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>-->
+<!--        </ul>-->
+<!--        <div class='input-fields'>-->
+<!--                <form method="POST" class="login-form" action="">-->
+<!--                    {% csrf_token %}-->
+<!--                    <div class="form-control">-->
+<!--                        {{ form.email }}-->
+<!--                        {{ form.password }}-->
+<!--                    </div>-->
+<!--                    <button class="ghost-round" type="submit" value="Submit" > Login </button>-->
+<!--                </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<div class="login">
+      <h2 class="active"> sign in </h2>
+
+          <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="signin">
+              Sign In
+            </button>
+
+          </form>
+</div>
+
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+<div class="firefly"></div>
+
+{% endblock login %}

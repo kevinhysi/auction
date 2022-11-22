@@ -18,7 +18,7 @@
 }
 
 .form-product > p > label {
-    color: white;
+    color: black;
     font-size: 16px;
     line-height: 24px;
     display: inline-block;
@@ -60,7 +60,7 @@
 </style>
 {% endblock styles %}
 
-{% block content %}
+{% block product_add %}
 <form novalidate action="" method="post" enctype="multipart/form-data" class="form-product">
     {% csrf_token %}
     {{ form.as_p }}
@@ -68,4 +68,4 @@
         <button type="submit">Add product</button>
     </div>
 </form>
-{% endblock content %}
+{% endblock %}

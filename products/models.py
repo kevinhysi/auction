@@ -22,7 +22,6 @@ class Product(models.Model):
     start_price = models.DecimalField(decimal_places=4, max_digits=8)
     buy_now_price = models.DecimalField(decimal_places=4, max_digits=8)
 
-
     def __str__(self):
         return "Title: " + self.title
 
@@ -57,4 +56,3 @@ class Bid(models.Model):
 
     def __str__(self):
         return "User ID: " + str(self.user_id) + " Auction ID : " + str(self.auction_id) + " " + str(self.bid_time)
-
